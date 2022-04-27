@@ -1,0 +1,43 @@
+* {
+    color: white;
+}
+
+h1, p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.bgPage {
+    background-color: black;
+}
+
+/* .quiz1 {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.quest1 {
+    display: flex;
+}
+
+.quest2 {
+    display: flex;
+}
+
+.quest3 {
+    display: flex;
+}
+
+.quest4 {
+    display: flex;
+} */
+
+#quizAnswers {
+    display: flex;
+    align-self: center;
+}
+
+#resultText {
+    text-align: center;
+}
