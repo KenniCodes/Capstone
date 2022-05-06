@@ -1,33 +1,105 @@
-var myQuiz = [
+var prideQuiz = [
     {
-        question: "What is 10/2?",
+        question: "What started the gay rights movement?",
         answers: {
-            a: '3',
-            b: '5',
-            c: '115'
+            a: 'L.A. Riot',
+            b: 'Chicago Riots',
+            c: 'Stonewall Riot'
+        },
+        correctAnswer: 'c'
+    },
+    {
+        question: "What is the updated Pride acronym (as of 2021)?",
+        answers: {
+            a: 'LGBTQ',
+            b: 'LGBTQIA',
+            c: 'LGBTQIA+'
+        },
+        correctAnswer: 'c'
+    },
+    {
+        question: "What does Non-Binary mean?*",
+        answers: {
+            a: 'Gender neutral',
+            b: 'Anything outside the gender binary',
+            c: 'Gender Fluid'
         },
         correctAnswer: 'b'
     },
     {
-        question: "What is 30/3?",
+        question: "What does the Q mean in LGBTQ?",
         answers: {
-            a: '3',
-            b: '5',
-            c: '10'
+            a: 'Queer',
+            b: 'Questioning',
+            c: 'All of the above'
         },
         correctAnswer: 'c'
+    },
+    {
+        question: "What month is Pride celebrated?",
+        answers: {
+            a: 'June',
+            b: 'July',
+            c: 'August'
+        },
+        correctAnswer: 'a'
+    },
+    {
+        question: "How many colours are on the updated Pride flag?",
+        answers: {
+            a: '6',
+            b: '10',
+            c: '8',
+        },
+        correctAnswer: 'b'
+    },
+    {
+        question: "Where does Non-binary fit in LGBTQ?",
+        answers: {
+            a: 'Trans',
+            b: 'Queer',
+            c: 'None of the above'
+        },
+        correctAnswer: 'a'
+    },
+    {
+        question: "When was gay marriage legal in Canada?",
+        answers: {
+            a: '2002',
+            b: '2005',
+            c: '2010'
+        },
+        correctAnswer: 'b'
+    },
+    {
+        question: "When was 'X' added as a gender marker in BC?",
+        answers: {
+            a: '2005',
+            b: '2012',
+            c: '2019'
+        },
+        correctAnswer: 'c'
+    },
+    {
+        question: "Which Olympic year had the most publicly out LGBTQ athletes?",
+        answers: {
+            a: '2020 Tokyo Summer Olympics',
+            b: '2010 Vancouver Winter Olympics',
+            c: '2016 Rio Summer Olympics'
+        },
+        correctAnswer: 'a'
     }
 ];
 
-var quizQuestions = document.getElementById('quizI');
+var prideQuestions = document.getElementById('quizI');
 var quizResults = document.getElementById('testResults');
 var submitButton = document.getElementById('submitA');
 
-generateQuiz(myQuiz, quizQuestions, quizResults, submitButton);
+generateQuiz(prideQuiz, prideQuestions, quizResults, submitButton);
 
-function generateQuiz(questions, quizQuestions, quizResults, submitButton){
+function generateQuiz(questions, prideQuestions, quizResults, submitButton){
     
-    function showQuestions(questions, quizQuestions){
+    function showQuestions(questions, prideQuestions){
         var output = [];
         var answers;
 
@@ -43,14 +115,14 @@ function generateQuiz(questions, quizQuestions, quizResults, submitButton){
                 );
             }
         output.push(
-            '<div class="question">' + questions[x].question + '</div>'
-            + '<div class="answers">' + answers.join('') + '</div>'
+            '<br><div class="question">' + questions[x].question + '</div>'
+            + '<div class="answers">' + answers.join('') + '</div><br>'
         );
     }
-        quizQuestions.innerHTML = output.join('');
+        prideQuestions.innerHTML = output.join('');
     }
-    function showResults(questions, quizQuestions, quizResults){
-        var answerContainers = quizQuestions.querySelectorAll('.answers');
+    function showResults(questions, prideQuestions, quizResults){
+        var answerContainers = prideQuestions.querySelectorAll('.answers');
 
         var userAnswer = '';
         var numCorrect = 0;
@@ -68,9 +140,9 @@ function generateQuiz(questions, quizQuestions, quizResults, submitButton){
         }
         quizResults.innerHTML = 'Your results are ' + numCorrect + ' correct out of ' + questions.length;
     }
-    showQuestions(questions, quizQuestions);
+    showQuestions(questions, prideQuestions);
 
     submitButton.onclick = function(){
-        showResults(questions, quizQuestions, quizResults);
+        showResults(questions, prideQuestions, quizResults);
     }
 }
